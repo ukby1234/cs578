@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">TrojanNow</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_comment">CommentActivity</string>
+    <string name="title_activity_message">MessageActivity</string>
+    <string name="title_activity_sensor">SensorActivity</string>
+    <string name="title_activity_status">StatusActivity</string>
+    <string name="title_activity_voting">VotingActivity</string>
+    <string name="title_activity_user_management">UserManagementActivity</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_create_status">CreateStatusActivity</string>
+    <string-array name="sensor_arrays">
+        <item>GPS</item>
+        <item>Temperature</item>
+        <item>Compass</item>
+    </string-array>
+</resources>
