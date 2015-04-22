@@ -29,7 +29,7 @@ CREATE TABLE `attributes` (
   `source` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `type` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `attributes` (
 
 LOCK TABLES `attributes` WRITE;
 /*!40000 ALTER TABLE `attributes` DISABLE KEYS */;
-INSERT INTO `attributes` VALUES (1,1,'40F','Temperature','environment'),(2,12,'testGPS','GPS','environment'),(3,12,'40F','Temperature','environment'),(4,14,'N40E','Compass','environment'),(5,15,'20F','Temperature','environment'),(6,16,'N20W','Compass','environment');
+INSERT INTO `attributes` VALUES (1,1,'40F','Temperature','environment'),(2,12,'testGPS','GPS','environment'),(3,12,'40F','Temperature','environment'),(4,14,'N40E','Compass','environment'),(5,15,'20F','Temperature','environment'),(6,16,'N20W','Compass','environment'),(7,22,'asdfsdaf','GPS','environment'),(8,23,'aaa','Temperature','environment'),(9,23,'bbb','Compass','environment');
 /*!40000 ALTER TABLE `attributes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,7 +56,7 @@ CREATE TABLE `comments` (
   `text` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,8 +65,35 @@ CREATE TABLE `comments` (
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-INSERT INTO `comments` VALUES (2,1,1,'c1','2015-04-19 18:16:54'),(3,1,2,'c2','2015-04-19 18:17:02'),(4,1,3,'c3','2015-04-19 18:17:06'),(5,1,4,'c4','2015-04-19 18:17:09'),(6,1,5,'c5','2015-04-19 18:17:12'),(7,1,6,'c6','2015-04-19 18:17:15'),(8,1,7,'c7','2015-04-19 18:17:19'),(9,1,7,'c8','2015-04-19 18:17:21'),(10,1,7,'c9','2015-04-19 18:17:24'),(11,1,2,'c10','2015-04-19 18:17:28'),(12,1,2,'c11','2015-04-19 18:17:31'),(13,1,3,'c12','2015-04-19 18:17:34'),(14,1,4,'c13','2015-04-19 18:17:37'),(15,1,5,'c14','2015-04-19 18:17:40'),(16,1,6,'c15','2015-04-19 18:17:43'),(17,1,1,'c16','2015-04-19 18:17:47');
+INSERT INTO `comments` VALUES (2,1,1,'c1','2015-04-19 18:16:54'),(3,1,2,'c2','2015-04-19 18:17:02'),(4,1,3,'c3','2015-04-19 18:17:06'),(5,1,4,'c4','2015-04-19 18:17:09'),(6,1,5,'c5','2015-04-19 18:17:12'),(7,1,6,'c6','2015-04-19 18:17:15'),(8,1,7,'c7','2015-04-19 18:17:19'),(9,1,7,'c8','2015-04-19 18:17:21'),(10,1,7,'c9','2015-04-19 18:17:24'),(11,1,2,'c10','2015-04-19 18:17:28'),(12,1,2,'c11','2015-04-19 18:17:31'),(13,1,3,'c12','2015-04-19 18:17:34'),(15,1,5,'c14','2015-04-19 18:17:40'),(16,1,6,'c15','2015-04-19 18:17:43'),(17,1,1,'c16','2015-04-19 18:17:47'),(18,1,21,'Frank1992','2015-04-22 03:27:16');
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `messages`
+--
+
+DROP TABLE IF EXISTS `messages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `receiver_id` int(11) NOT NULL,
+  `text` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `messages`
+--
+
+LOCK TABLES `messages` WRITE;
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+INSERT INTO `messages` VALUES (1,2,1,'Frank1992','2015-04-22 05:15:22'),(2,1,2,'asdasdasdas','2015-04-22 06:46:34'),(3,5,1,'adasdas','2015-04-22 07:27:07');
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -105,7 +132,7 @@ CREATE TABLE `posts` (
   `anonymous` tinyint(1) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -114,7 +141,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,1,'testad',0,'2015-04-08 07:00:00'),(2,1,'test',1,'2015-04-09 07:00:00'),(3,1,'test2',0,'2015-04-10 07:00:00'),(4,1,'test3',0,'2015-04-11 07:00:00'),(5,1,'test4',0,'2015-04-15 07:00:00'),(6,1,'test5',0,'2015-04-12 07:00:00'),(7,1,'test6',1,'2015-04-13 07:00:00'),(13,1,'test stamp',1,'2015-04-20 06:33:14'),(14,1,'another test',0,'2015-04-20 06:34:36'),(16,2,'haha',0,'2015-04-20 06:59:22');
+INSERT INTO `posts` VALUES (1,1,'testad',0,'2015-04-08 07:00:00'),(2,1,'test',1,'2015-04-09 07:00:00'),(3,1,'test2',0,'2015-04-10 07:00:00'),(4,1,'test3',0,'2015-04-11 07:00:00'),(5,1,'test4',0,'2015-04-15 07:00:00'),(6,1,'test5',0,'2015-04-12 07:00:00'),(7,1,'test6',1,'2015-04-13 07:00:00'),(13,1,'test stamp',1,'2015-04-20 06:33:14'),(14,1,'another test',0,'2015-04-20 06:34:36'),(16,2,'haha',0,'2015-04-20 06:59:22'),(19,1,'test aaa',0,'2015-04-22 02:42:53'),(20,1,'test123',0,'2015-04-22 02:45:26'),(21,1,'asdasdasd',0,'2015-04-22 02:46:55'),(23,1,'test 123',1,'2015-04-22 04:56:50');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,7 +157,7 @@ CREATE TABLE `users` (
   `username` text COLLATE utf8_bin,
   `password` text COLLATE utf8_bin,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,7 +166,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'frank','193e0a5e7abb48403abe5ff901d52ebf157e8bbe'),(2,'yuting','a9993e364706816aba3e25717850c26c9cd0d89d');
+INSERT INTO `users` VALUES (1,'frank','193e0a5e7abb48403abe5ff901d52ebf157e8bbe'),(2,'yuting','a9993e364706816aba3e25717850c26c9cd0d89d'),(5,'test','a94a8fe5ccb19ba61c4c0873d391e987982fbbd3');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -152,4 +179,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-20  0:08:03
+-- Dump completed on 2015-04-22  0:28:50
