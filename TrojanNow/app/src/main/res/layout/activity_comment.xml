@@ -6,7 +6,48 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="edu.usc.yuting.trojannow.comment.CommentActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/newComment"
+            android:id="@+id/textView9"
+            android:phoneNumber="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/createCommentEditText" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create"
+            android:id="@+id/button3"
+            android:layout_alignParentLeft="true"
+            android:onClick="onUploadComment" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:id="@+id/button4"
+            android:layout_alignParentRight="true"
+            android:nestedScrollingEnabled="false"
+            android:onClick="onCancelComment" />
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -5,11 +5,11 @@ package edu.usc.yuting.trojannow.sensor;
  */
 import java.io.Serializable;
 
-import edu.usc.yuting.trojannow.status.Status;
 public class Sensor implements Serializable{
     private String source;
     private String information;
     private String id;
+    private String statusId;
     public Sensor(String source, String information) {
         /*
         Constructor for the wrapper of sensor data
@@ -18,13 +18,14 @@ public class Sensor implements Serializable{
         this.information = information;
     }
 
-    public Sensor(String id, String source, String information) {
+    public Sensor(String id, String statusId, String source, String information) {
         /*
         Constructor for the wrapper of sensor data
          */
         this.source = source;
         this.information = information;
         this.id = id;
+        this.statusId = statusId;
     }
 
     public String getSource() {
@@ -37,6 +38,10 @@ public class Sensor implements Serializable{
 
     public String getId() {
         return id;
+    }
+
+    public String getStatusId() {
+        return statusId;
     }
 
     public void setId(String id) {

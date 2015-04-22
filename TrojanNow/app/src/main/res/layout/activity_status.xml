@@ -76,7 +76,8 @@
             android:layout_height="wrap_content"
             android:text="Comment"
             android:id="@+id/newCommentButton"
-            android:layout_alignParentLeft="true" />
+            android:layout_alignParentLeft="true"
+            android:onClick="onCreateComment" />
 
         <Button
             android:layout_width="wrap_content"

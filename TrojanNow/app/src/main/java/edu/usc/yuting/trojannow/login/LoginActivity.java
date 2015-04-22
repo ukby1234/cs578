@@ -11,32 +11,12 @@ import android.widget.EditText;
 
 import edu.usc.yuting.trojannow.Intents;
 import edu.usc.yuting.trojannow.R;
+import edu.usc.yuting.trojannow.SendIntent;
 import edu.usc.yuting.trojannow.status.DashboardActivity;
 
 
-public class LoginActivity extends ActionBarActivity {
-    private class LoginTask extends AsyncTask<Void, Void, Void> {
-        private ActionBarActivity activity;
-        User user;
-        public LoginTask(ActionBarActivity activity) {
-            this.activity = activity;
-        }
-        @Override
-        protected Void doInBackground(Void... urls) {
-            String userName = ((EditText)findViewById(R.id.userNameText)).getText().toString();
-            String password = ((EditText)findViewById(R.id.passwordText)).getText().toString();
-            user = User.authenticate(userName, password);
-            return null;
-        }
+public class LoginActivity extends ActionBarActivity implements SendIntent {
 
-        @Override
-        protected void onPostExecute(Void result) {
-            if (user != null) {
-                Intent intent = new Intent(activity, DashboardActivity.class);
-                startActivity(intent);
-            }
-        }
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +40,9 @@ public class LoginActivity extends ActionBarActivity {
         If successful, update the local database cache with the new user information
         Also, update create the User class variable, and put into the CacheDatabase instance
          */
-        new LoginTask(this).execute();
+        String userName = ((EditText)findViewById(R.id.userNameText)).getText().toString();
+        String password = ((EditText)findViewById(R.id.passwordText)).getText().toString();
+        User.authenticate(userName, password, this);
     }
 
     public void onResetPassword(View v) {
@@ -73,5 +55,11 @@ public class LoginActivity extends ActionBarActivity {
         /*
         After the user fills out the new user form, it will request the remote server for a new user creation
          */
+    }
+
+    @Override
+    public void onSendIntent() {
+        Intent intent = new Intent(this, DashboardActivity.class);
+        startActivity(intent);
     }
 }

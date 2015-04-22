@@ -26,6 +26,7 @@ class AttributeController extends BaseController {
 			$results[$i]['source'] = $attribute->source;
 			$results[$i]['information'] = $attribute->information;
 			$results[$i]['post_id'] = $attribute->post_id;
+			$results[$i]['user_id'] = $attribute->post->user_id;
 			$results[$i]['type'] = $attribute->type;
 			$i++;
 		}

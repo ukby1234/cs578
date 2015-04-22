@@ -50,6 +50,10 @@
             android:name=".status.CreateStatusActivity"
             android:label="@string/title_activity_create_status" >
         </activity>
+        <activity
+            android:name=".message.CreateMessageActivity"
+            android:label="@string/title_activity_create_message" >
+        </activity>
     </application>
 
 </manifest>

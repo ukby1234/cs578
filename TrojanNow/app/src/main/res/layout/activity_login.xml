@@ -52,35 +52,28 @@
                 android:ems="10"
                 android:id="@+id/passwordText"
                 android:layout_weight="1" />
+
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Login"
                 android:id="@+id/loginButton"
-                android:onClick="onLogin" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Reset password"
-                android:id="@+id/resetPasswordButton"
-                android:onClick="onResetPassword" />
+                android:onClick="onLogin"
+                android:layout_alignParentLeft="true" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New User"
                 android:id="@+id/newUserButton"
-                android:onClick="onCreateUser" />
-        </LinearLayout>
+                android:onClick="onCreateUser"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>

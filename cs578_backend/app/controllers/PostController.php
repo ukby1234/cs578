@@ -10,6 +10,7 @@ class PostController extends BaseController {
 			$results[$i]['user'] = $post->user->username;
 			$results[$i]['uid'] = $post->user_id;
 			$results[$i]['text'] = $post->text;
+			$results[$i]['timestamp'] = $post->timestamp;
 			if ($post->anonymous) {
 				$results[$i]['anonymous'] = true;
 			}

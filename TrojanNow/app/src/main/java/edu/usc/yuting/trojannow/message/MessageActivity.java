@@ -1,22 +1,28 @@
 package edu.usc.yuting.trojannow.message;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.LinkedList;
 import java.util.List;
 
 import edu.usc.yuting.trojannow.R;
+import edu.usc.yuting.trojannow.UpdateUI;
+import edu.usc.yuting.trojannow.status.DashboardActivity;
 
-public class MessageActivity extends ActionBarActivity {
+public class MessageActivity extends ActionBarActivity implements UpdateUI{
     List<Message> messages = new LinkedList<Message>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
+        MessageRepository.getInstance().refreshMessage(this);
     }
 
 
@@ -35,7 +41,9 @@ public class MessageActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_dashboard) {
+            Intent intent = new Intent(this, DashboardActivity.class);
+            startActivity(intent);
             return true;
         }
 
@@ -48,13 +56,8 @@ public class MessageActivity extends ActionBarActivity {
         Then add to the activity class and the local cache database
         Finally, make the remote call to the server
          */
-    }
-
-    public void onDeleteMessage(View v) {
-        /*
-        First find the corresponding message and delete both from local cache and list
-        Make the remote call to the server, deleting the message
-         */
+        Intent intent = new Intent(this, CreateMessageActivity.class);
+        startActivity(intent);
     }
 
     public void onRefreshMessage(View v) {
@@ -62,5 +65,25 @@ public class MessageActivity extends ActionBarActivity {
         Update the local cache database if there is an Internet connection
         Clear the list and load everything from the cache database
          */
+        MessageRepository.getInstance().refreshMessage(this);
+    }
+
+    private void drawMessages() {
+        LinearLayout layout = (LinearLayout)findViewById(R.id.messageLayout);
+        layout.removeAllViews();
+        for (Message message : MessageRepository.getInstance().getMessages()) {
+            TextView metadata = new TextView(this);
+            metadata.setText("From " + message.getSenderName() + " to " + message.getReceiverName() + ": ");
+            TextView text = new TextView(this);
+            text.setText(message.getText());
+            layout.addView(metadata);
+            layout.addView(text);
+        }
+    }
+
+
+    @Override
+    public void onUpdateUI() {
+        drawMessages();
     }
 }
