@@ -21,7 +21,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import edu.usc.yuting.trojannow.UpdateUI;
+import edu.usc.yuting.trojannow.common.UpdateUI;
 import edu.usc.yuting.trojannow.status.Status;
 
 /**

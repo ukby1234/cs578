@@ -1,9 +1,6 @@
 package edu.usc.yuting.trojannow.login;
 
-import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
-import android.widget.EditText;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -25,10 +22,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import edu.usc.yuting.trojannow.R;
-import edu.usc.yuting.trojannow.SendIntent;
-import edu.usc.yuting.trojannow.UpdateUI;
-import edu.usc.yuting.trojannow.status.DashboardActivity;
+import edu.usc.yuting.trojannow.common.CreateDialog;
+import edu.usc.yuting.trojannow.common.SendIntent;
+import edu.usc.yuting.trojannow.common.UpdateUI;
 
 /**
  * Created by chengyey on 3/30/15.
@@ -77,6 +73,37 @@ public class User implements Serializable{
         }
     }
 
+    private static class CreateUserTask extends AsyncTask<String, Void, Void> {
+        private CreateDialog dialogOperation;
+        boolean successful = false;
+        public CreateUserTask(CreateDialog dialogOperation) {
+            this.dialogOperation = dialogOperation;
+        }
+        @Override
+        protected Void doInBackground(String... infos) {
+            try {
+                HttpClient client = new DefaultHttpClient();
+                HttpPost post = new HttpPost("http://10.0.2.2:8000/user/");
+                List<NameValuePair> pairs = new ArrayList<NameValuePair>();
+                pairs.add(new BasicNameValuePair("username", infos[0]));
+                pairs.add(new BasicNameValuePair("passwd", infos[1]));
+                post.setEntity(new UrlEncodedFormEntity(pairs));
+                HttpResponse response = client.execute(post);
+                if (response.getStatusLine().getStatusCode() == 200) {
+                    successful = true;
+                }
+            }catch(Exception e) {
+
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            dialogOperation.onCreateDialog("Create User", successful ? "User created successfully" : "User created failed");
+        }
+    }
+
     private class GetUsersTask extends AsyncTask<String, Void, Void> {
         private UpdateUI uiOperation;
         public GetUsersTask(UpdateUI uiOperation) {
@@ -111,6 +138,11 @@ public class User implements Serializable{
     public static void authenticate(String userName, String password, SendIntent intent) {
         instance = null;
         new LoginTask(intent).execute(userName, password);
+    }
+
+    public static void createUser(String userName, String password, CreateDialog dialog) {
+        instance = null;
+        new CreateUserTask(dialog).execute(userName, password);
     }
 
     public static User getInstance() {

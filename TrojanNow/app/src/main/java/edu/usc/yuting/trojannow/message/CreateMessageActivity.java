@@ -13,8 +13,8 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 
 import edu.usc.yuting.trojannow.R;
-import edu.usc.yuting.trojannow.SendIntent;
-import edu.usc.yuting.trojannow.UpdateUI;
+import edu.usc.yuting.trojannow.common.SendIntent;
+import edu.usc.yuting.trojannow.common.UpdateUI;
 import edu.usc.yuting.trojannow.login.User;
 
 public class CreateMessageActivity extends ActionBarActivity implements UpdateUI, SendIntent{

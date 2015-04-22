@@ -13,7 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import edu.usc.yuting.trojannow.R;
-import edu.usc.yuting.trojannow.UpdateUI;
+import edu.usc.yuting.trojannow.common.UpdateUI;
 import edu.usc.yuting.trojannow.status.DashboardActivity;
 
 public class MessageActivity extends ActionBarActivity implements UpdateUI{

@@ -10,9 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import edu.usc.yuting.trojannow.Intents;
+import edu.usc.yuting.trojannow.common.Intents;
 import edu.usc.yuting.trojannow.R;
-import edu.usc.yuting.trojannow.UpdateUI;
+import edu.usc.yuting.trojannow.common.UpdateUI;
 import edu.usc.yuting.trojannow.message.MessageActivity;
 
 public class DashboardActivity extends ActionBarActivity implements UpdateUI{

@@ -22,8 +22,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import edu.usc.yuting.trojannow.SendIntent;
-import edu.usc.yuting.trojannow.UpdateUI;
+import edu.usc.yuting.trojannow.common.SendIntent;
+import edu.usc.yuting.trojannow.common.UpdateUI;
 import edu.usc.yuting.trojannow.login.User;
 import edu.usc.yuting.trojannow.sensor.SensorRepository;
 

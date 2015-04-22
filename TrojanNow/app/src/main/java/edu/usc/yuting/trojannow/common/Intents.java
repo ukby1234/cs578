@@ -1,4 +1,4 @@
-package edu.usc.yuting.trojannow;
+package edu.usc.yuting.trojannow.common;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -9,10 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import java.util.LinkedList;
-import java.util.List;
-
-import edu.usc.yuting.trojannow.Intents;
+import edu.usc.yuting.trojannow.common.Intents;
 import edu.usc.yuting.trojannow.R;
 import edu.usc.yuting.trojannow.status.CreateStatusActivity;
 import edu.usc.yuting.trojannow.status.Status;

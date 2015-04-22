@@ -13,6 +13,7 @@
 
 Route::post('/login', 'UserController@authentication');
 Route::get('/user/', 'UserController@getUsers');
+Route::post('/user/', 'UserController@createUser');
 Route::get('/post/{uid}/', 'PostController@getPosts');
 Route::post('/post/{uid}/', 'PostController@createPost');
 Route::delete('/post/{uid}/{pid}/', 'PostController@deletePost');

@@ -1,9 +1,6 @@
 package edu.usc.yuting.trojannow.comment;
 
-import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
-import android.widget.EditText;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -25,11 +22,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import edu.usc.yuting.trojannow.R;
-import edu.usc.yuting.trojannow.SendIntent;
-import edu.usc.yuting.trojannow.UpdateUI;
+import edu.usc.yuting.trojannow.common.SendIntent;
+import edu.usc.yuting.trojannow.common.UpdateUI;
 import edu.usc.yuting.trojannow.login.User;
-import edu.usc.yuting.trojannow.status.DashboardActivity;
 
 /**
  * Created by Frank on 4/21/2015.

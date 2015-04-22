@@ -1,7 +1,6 @@
 package edu.usc.yuting.trojannow.comment;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -9,22 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
-import edu.usc.yuting.trojannow.Intents;
+import edu.usc.yuting.trojannow.common.Intents;
 import edu.usc.yuting.trojannow.R;
-import edu.usc.yuting.trojannow.SendIntent;
-import edu.usc.yuting.trojannow.login.User;
-import edu.usc.yuting.trojannow.status.DashboardActivity;
+import edu.usc.yuting.trojannow.common.SendIntent;
 import edu.usc.yuting.trojannow.status.StatusActivity;
 
 public class CommentActivity extends ActionBarActivity implements SendIntent {

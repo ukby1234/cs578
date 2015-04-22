@@ -2,7 +2,6 @@ package edu.usc.yuting.trojannow.status;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -15,25 +14,12 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import edu.usc.yuting.trojannow.Intents;
+import edu.usc.yuting.trojannow.common.Intents;
 import edu.usc.yuting.trojannow.R;
-import edu.usc.yuting.trojannow.SendIntent;
+import edu.usc.yuting.trojannow.common.SendIntent;
 import edu.usc.yuting.trojannow.login.User;
 import edu.usc.yuting.trojannow.sensor.Sensor;
 import edu.usc.yuting.trojannow.sensor.SensorActivity;
