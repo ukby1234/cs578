@@ -21,7 +21,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="User name:"
+                android:text="@string/login_user_name"
                 android:id="@+id/textView" />
 
             <EditText
@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password: "
+                android:text="@string/login_password"
                 android:id="@+id/textView2" />
 
             <EditText
@@ -62,7 +62,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="@string/login"
                 android:id="@+id/loginButton"
                 android:onClick="onLogin"
                 android:layout_alignParentLeft="true" />
@@ -70,7 +70,15 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New User"
+                android:text="@string/clear"
+                android:id="@+id/button11"
+                android:layout_centerHorizontal="true"
+                android:onClick="onClearUser" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/new_user"
                 android:id="@+id/newUserButton"
                 android:onClick="onCreateUser"
                 android:layout_alignParentRight="true" />

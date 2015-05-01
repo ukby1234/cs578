@@ -4,16 +4,22 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="edu.usc.yuting.trojannow.status.DashboardActivity">
+    tools:context="edu.usc.yuting.trojannow.status.activity.DashboardActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/dashboardLayout"></LinearLayout>
+        android:id="@+id/scrollView2" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/dashboardLayout"></LinearLayout>
+    </ScrollView>
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -23,7 +29,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create Status"
+            android:text="@string/create_status"
             android:id="@+id/createStatusButton"
             android:layout_alignParentLeft="true"
             android:onClick="onCreateStatus" />
@@ -31,7 +37,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Refresh Status"
+            android:text="@string/refresh_status"
             android:id="@+id/refreshStatusButton"
             android:layout_alignParentLeft="false"
             android:layout_alignParentRight="true"

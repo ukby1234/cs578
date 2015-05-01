@@ -3,6 +3,8 @@
     package="edu.usc.yuting.trojannow" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +12,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".login.activity.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,40 +21,40 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".comment.CommentActivity"
+            android:name=".comment.activity.CommentActivity"
             android:label="@string/title_activity_comment" >
         </activity>
         <activity
-            android:name=".message.MessageActivity"
+            android:name=".message.activity.MessageActivity"
             android:label="@string/title_activity_message" >
         </activity>
         <activity
-            android:name=".sensor.SensorActivity"
+            android:name=".sensor.activity.SensorActivity"
             android:label="@string/title_activity_sensor" >
         </activity>
         <activity
-            android:name=".status.StatusActivity"
+            android:name=".status.activity.StatusActivity"
             android:label="@string/title_activity_status" >
         </activity>
         <activity
-            android:name=".voting.VotingActivity"
-            android:label="@string/title_activity_voting" >
-        </activity>
-        <activity
-            android:name=".usermgmt.UserManagementActivity"
+            android:name=".usermgmt.activity.UserManagementActivity"
             android:label="@string/title_activity_user_management" >
         </activity>
         <activity
-            android:name=".status.DashboardActivity"
+            android:name=".status.activity.DashboardActivity"
             android:label="@string/title_activity_dashboard" >
         </activity>
         <activity
-            android:name=".status.CreateStatusActivity"
+            android:name=".status.activity.CreateStatusActivity"
             android:label="@string/title_activity_create_status" >
         </activity>
         <activity
-            android:name=".message.CreateMessageActivity"
+            android:name=".message.activity.CreateMessageActivity"
             android:label="@string/title_activity_create_message" >
+        </activity>
+        <activity
+            android:name=".usermgmt.activity.AddFriendActivity"
+            android:label="@string/title_activity_add_friend" >
         </activity>
     </application>
 

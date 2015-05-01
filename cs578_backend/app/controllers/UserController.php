@@ -23,20 +23,6 @@ class UserController extends BaseController {
 		}
 	}
 
-	public function getUsers() {
-		$users = User::get();
-		$i = 0;
-		$results = array();
-		foreach($users as $user) {
-			$results[$i]['id'] = $user->id;
-			$results[$i]['user_name'] = $user->username;
-			$i++;
-		}
-		$response = Response::make(json_encode($results) , 200);
-		$response->header('Content-Type', 'application/json');
-		return $response;
-	}
-
 	public function createUser() {
 		$user = new User();
 		$username = Input::get('username');

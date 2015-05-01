@@ -1,17 +1,27 @@
 <?php
 class CommentController extends BaseController {
-	public function getComments($postid) {
+	public function getComments($postid, $uid) {
 		$comments = Comment::where('post_id', '=', $postid)->orderBy('timestamp', 'DESC')->get();
+		$friends = Friend::where('user_id', '=', $uid)->get();
 		$results = array();
 		$i = 0;
 		foreach($comments as $comment) {
-			$results[$i]['id'] = $comment->id;
-			$results[$i]['user'] = $comment->user->username;
-			$results[$i]['text'] = $comment->text;
-			$results[$i]['post_id'] = $comment->post_id;
-			$results[$i]['user_id'] = $comment->user_id;
-			$results[$i]['timestamp'] = $comment->timestamp;
-			$i++;
+			$found = false;
+			foreach($friends as $friend) {
+				if ($comment->user_id == $friend->friend_id && $friend->accepted) {
+					$found = true;
+					break;
+				}
+			}
+			if ($found || $comment->user_id == $uid) {
+				$results[$i]['id'] = $comment->id;
+				$results[$i]['user'] = $comment->user->username;
+				$results[$i]['text'] = $comment->text;
+				$results[$i]['post_id'] = $comment->post_id;
+				$results[$i]['user_id'] = $comment->user_id;
+				$results[$i]['timestamp'] = $comment->timestamp;
+				$i++;
+			}
 		}
 		$response = Response::make(json_encode($results) , 200);
 		$response->header('Content-Type', 'application/json');

@@ -4,7 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="edu.usc.yuting.trojannow.sensor.SensorActivity">
+    tools:context="edu.usc.yuting.trojannow.sensor.activity.SensorActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -21,15 +21,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Source"
+                android:text="@string/source"
                 android:id="@+id/textView4" />
 
             <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/sensorSourceSpinner"
-                android:spinnerMode="dropdown"
-                android:entries="@array/sensor_arrays" />
+                android:spinnerMode="dropdown" />
 
         </LinearLayout>
 
@@ -41,14 +40,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/textView5" />
+                android:text="@string/sensor_data"
+                android:id="@+id/textView5"
+                android:paddingRight="@dimen/result_padding" />
 
-            <EditText
-                android:layout_width="fill_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/sensorInformationEditText"
-                android:inputType="text" />
+                android:id="@+id/sensorDataTextView"
+                android:paddingLeft="@dimen/result_padding" />
+
         </LinearLayout>
 
     </LinearLayout>
@@ -61,7 +62,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Done"
+            android:text="@string/done"
             android:id="@+id/button"
             android:layout_alignParentLeft="true"
             android:onClick="onAttachSensorData" />
@@ -69,7 +70,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:id="@+id/button2"
             android:layout_alignParentRight="true"
             android:onClick="onCancelSensorData" />

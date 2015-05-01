@@ -2,7 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="edu.usc.yuting.trojannow.comment.CommentActivity">
-    <item android:id="@+id/action_messaages" android:title="@string/action_messages"
+    tools:context="edu.usc.yuting.trojannow.comment.activity.CommentActivity">
+    <item android:id="@+id/action_messages" android:title="@string/action_messages"
     android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_user_mgmt" android:title="@string/action_user_mgmt"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_logout" android:title="@string/action_logout"
+        android:orderInCategory="100" app:showAsAction="never" />
+
 </menu>
